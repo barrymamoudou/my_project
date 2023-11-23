@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title property.title %} 
+{% block body %}
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+             
+            </div>
+            <div class="col-md-4">
+                <h1>{{property.title}}</h1>
+                <h2>{{property.roms}}piece - {{ property.surface}}m²</h2>
+                <div class="text-primary" style="font-size:2rem; font-wight:bold">{{ property.formattedPrice}} £</div>
+               <a href="" class="btn btn-primary">Nous Contact</a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="container mt-4">
+    <p>{{property.description | nl2br}}</p>
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Caracterisque</h2>
+            <table class="table table-striped">
+                <tr>
+                  <th scope="col">Surface d'Habita</th>
+                  <td>{{property.surface}} m²</td>
+                </tr>
+                <tr>
+                  <th scope="col">Piéce</th>
+                  <td>{{property.roms}} piéce</td>
+                </tr>
+                <tr>
+                  <th scope="col">Chambre</th>
+                  <td>{{property.bedrooms}}</td>
+                </tr>
+                <tr>
+                  <th scope="col">Etage</th>
+                  <td>{{property.floor}}</td>
+                </tr>
+                <tr>
+                  <th scope="col">chauffage</th>
+                  <td>{{property.heatType}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h2>Specificitée</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
+   
