@@ -270,7 +270,4 @@ class Property
         return $this;
     }
 
-    public function formatPrice(){
-
-    }
 }

@@ -9,25 +9,25 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminPropertyController extends AbstractController
-{   
+{
     private $repository;
     public function __construct(PropertyRepository $repository){
         $this->repository = $repository;
     }
+
     /**
-     * @Route("/admin", name="admin.porperty.index")
+     * @Route("/admin/admin/property", name="admin")
      */
     public function index(): Response
-    {
+    {   
         $properties = $this->repository->findAll();
         return $this->render('admin/admin_property/index.html.twig',compact('properties'));
     }
-
+    
     /**
-     * @Route("/admin/{id}", name="admin.porperty.edit")
+     * @Route("/admin/admin/property", name="admin")
      */
-    public function edit(Property $property): Response{
-        
-        return $this->render('admin/admin_property/edit.html.twig', compact('property'));
+    public function create(Property $property): Response{
+        return $this->render('admin/admin_property/edit.html.twig',compact('property'));
     }
 }

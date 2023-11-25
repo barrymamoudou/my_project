@@ -2,8 +2,15 @@
 #    path: /
 #    controller: App\Controller\HomeController::index
 
-
-
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+admin_home:
+    path: '/admin'
+    controller: 'App\Controller\Admin\AdminPropertyController::index'
+
+  
+admin_edit:
+    path: '/admin/{id}'  
+    controller: 'App\Controller\Admin\AdminPropertyController::edit'
